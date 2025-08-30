@@ -1,0 +1,16 @@
+name: www actions
+run-name: ${{ github.actor }} is now running
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: builder
+        uses: Hoppermq/ci-kitchenette/astro/build@master
